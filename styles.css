@@ -1,0 +1,214 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+body {
+  font-size: 16px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header Section */
+.header {
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.nav-links button {
+  background: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav-links a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.nav-links button:hover {
+  background: #0056b3;
+  color: white;
+}
+
+/* About Section */
+.about {
+  padding: 3rem 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-content img {
+  max-width: 50%;
+  border-radius: 10px;
+}
+
+.about-content p {
+  flex: 1;
+}
+
+/* Programs Section */
+.programs {
+  padding: 3rem 0;
+}
+
+.programs h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.program-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.program-card {
+  flex: 1 1 calc(33.333% - 1rem);
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Achievements Section */
+.achievements {
+  padding: 3rem 0;
+  background: #e9ecef;
+}
+
+.achievements h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.achievement-structure {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.achievement-card {
+  padding: 1.5rem;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.bottom-row {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Contact Section */
+.contact {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.contact ul {
+  margin-top: 1rem;
+}
+
+.contact ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: #007bff;
+  color: white;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #007bff;
+}
+
+/* Update existing nav-links styles */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links button {
+  background: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 120px;
+}
