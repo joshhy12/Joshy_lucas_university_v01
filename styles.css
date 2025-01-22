@@ -52,10 +52,30 @@ body {
   cursor: pointer;
 }
 
+/* ...existing code... */
+
 .nav-links a {
-  color: #007bff;
+  color: #000; /* Example color */
+  text-decoration: none;
+  padding: 10px;
+}
+
+.nav-links a:hover {
+  color: #555; /* Example hover color */
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.nav-links button a {
+  color: inherit;
   text-decoration: none;
 }
+
+/* ...existing code... */
 
 .nav-links button:hover {
   background: #0056b3;
