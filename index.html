@@ -1,213 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>University of Arusha</title>
-    <link rel="icon" type="image/png" href="images/image2.JPG" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <div class="logo">
-            <img src="images/3.png" alt="University Logo" />
-          </div>
-          <div class="header-text">
-            <h1>University of Arusha</h1>
-            <p>Where Education Meets Excellence</p>
-          </div>
-        </div>
-        
-        <nav>
-          <ul class="nav-links">
-            <li>
-              <button><a href="index.html">Home</a></button>
-            </li>
-
-            <li class="dropdown">
-              <button>About Us</button>
-              <div class="dropdown-content">
-                <a href="AboutUs.html">History</a>
-                <a href="AboutUs.html">Mission & Vision</a>
-                <a href="AboutUs.html">Leadership</a>
-              </div>
-            </li>
-            <li class="dropdown">
-              <button>Academics</button>
-              <div class="dropdown-content">
-                <a href="Academics.html">Undergraduate Programs</a>
-                <a href="Academics.html">Postgraduate Programs</a>
-                <a href="Academics.html">Departments</a>
-              </div>
-            </li>
-            <li class="dropdown">
-              <button>Admissions</button>
-              <div class="dropdown-content">
-                <a href="Admissions.html">How to Apply</a>
-                <a href="Admissions.html">Fees</a>
-                <a href="Admissions.html">Eligibility</a>
-              </div>
-            </li>
-            <li class="dropdown">
-              <button>Research</button>
-              <div class="dropdown-content">
-                <a href="#projects">Projects</a>
-                <a href="#publications">Publications</a>
-                <a href="#facilities">Facilities</a>
-              </div>
-            </li>
-            <li class="dropdown">
-              <button>Student Life</button>
-              <div class="dropdown-content">
-                <a href="#clubs">Clubs</a>
-                <a href="#societies">Societies</a>
-                <a href="#events">Events</a>
-              </div>
-            </li>
-            <li>
-              <button><a href="#contact">Contact Us</a></button>
-            </li>
-          </ul>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/3.png" alt="University of Arusha Logo">
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="academics.html">Academics</a>
+                <a href="admissions.html">Admissions</a>
+                <a href="research.html">Research</a>
+                <a href="student-life.html">Student Life</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="search-login">
+                <input type="search" placeholder="Search...">
+                <button class="login-btn">Login</button>
+            </div>
         </nav>
-      </div>
+        
     </header>
 
-    <section id="home" class="home">
-      <div class="container">
-        <h2>Welcome to University of Arusha</h2>
-        <div class="slider">
-          <div class="slides">
-            <div class="slide">
-              <img src="images/image2.JPG" alt="University Main Building" />
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Empowering Minds for the Future</h1>
+            <p>Discover excellence in education at the University of Arusha</p>
+            <div class="cta-buttons">
+                <button class="cta-primary">Apply Now</button>
+                <button class="cta-secondary">Explore Programs</button>
             </div>
-            <div class="slide">
-              <img src="images/image1.JPG" alt="Campus Life" />
-            </div>
-            <div class="slide">
-              <img src="images/image2.JPG" alt="Library" />
-            </div>
-          </div>
-          <button class="slider-btn prev">❮</button>
-          <button class="slider-btn next">❯</button>
-          <div class="dots"></div>
         </div>
-        <p class="home-description">
-          Discover a world of opportunities at University of Arusha. We offer
-          exceptional education, cutting-edge research facilities, and a vibrant
-          campus life that prepares you for success in your chosen field.
-        </p>
-      </div>
     </section>
 
-    <section id="about" class="about">
-      <div class="container">
-        <h2>About Us</h2>
-        <div class="about-content">
-          <img src="images/image2.JPG" alt="University Campus" />
-          <p>
-            Welcome to <strong> University of Arusha </strong>, a premier
-            institution dedicated to fostering innovation, leadership, and
-            academic excellence. Our mission is to provide high-quality
-            education to prepare students for a successful future.
-          </p>
-        </div>
-      </div>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <!-- Welcome Section -->
+        <section class="welcome">
+            <h2>Welcome to University of Arusha</h2>
+            <p>A leading institution committed to academic excellence and innovation in education.</p>
+        </section>
 
-    <section id="programs" class="programs">
-      <div class="container">
-        <h2>Academic Programs</h2>
-        <div class="program-list">
-          <div class="program-card">
-            <h3>Engineering</h3>
-            <p>
-              Innovative and cutting-edge programs in various engineering
-              fields.
-            </p>
-          </div>
-          <div class="program-card">
-            <h3>Business</h3>
-            <p>
-              Empowering students with entrepreneurial and leadership skills.
-            </p>
-          </div>
-          <div class="program-card">
-            <h3>Arts & Humanities</h3>
-            <p>Explore creativity and culture through diverse programs.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="achievements" class="achievements">
-      <div class="container">
-        <h2>Achievements</h2>
-        <div class="achievement-structure">
-          <div class="achievement-card">
-            <h3>Top Global Rank</h3>
-            <p>Ranked among the top 10 universities globally in research.</p>
-          </div>
-          <div class="bottom-row">
-            <div class="achievement-card">
-              <h3>High Employment Rate</h3>
-              <p>Over 95% graduate employment rate within six months.</p>
+        <!-- Quick Links -->
+        <section class="quick-links">
+            <div class="link-card">
+                <h3>Admissions</h3>
+                <p>Start your journey with us</p>
             </div>
-            <div class="achievement-card">
-              <h3>Excellence Award</h3>
-              <p>Recipient of the Excellence in Education Award 2023.</p>
+            <div class="link-card">
+                <h3>Academic Programs</h3>
+                <p>Explore our diverse courses</p>
             </div>
-            <div class="achievement-card">
-              <h3>Sustainable Develpoment</h3>
-              <p>
-                Showcase Contributions to Sustainability through impactful
-                project or research.
-              </p>
+            <div class="link-card">
+                <h3>Research</h3>
+                <p>Discover our innovations</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2>Contact Us</h2>
-        <p>Have questions? Feel free to reach out!</p>
-        <ul>
-          <li>Email: info@universityofarusha.edu</li>
-          <li>Phone: +255 689 192 753</li>
-          <li>Address: 493 University of Arusha, Arusha, Tanzania</li>
-        </ul>
-      </div>
-    </section>
+        <!-- News and Events -->
+        <section class="news-events">
+            <h2>Latest News & Events</h2>
+            <div class="news-grid" id="newsGrid">
+                <!-- News items will be populated by JavaScript -->
+            </div>
+        </section>
+    </main>
 
-    <footer class="footer">
-      <div class="container">
+    <!-- Footer -->
+    <footer>
         <div class="footer-content">
-          <div class="footer-section">
-            <h3>Contact Information</h3>
-            <p>P.O. Box 493</p>
-            <p>Arusha, Tanzania</p>
-            <p>Email: info@universityofarusha.edu</p>
-            <p>Phone: +255 689 192 753</p>
-          </div>
-          <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="#history">History</a></li>
-              <li><a href="#mission">Mission & Vision</a></li>
-              <li><a href="#leadership">Leadership</a></li>
-              <li><a href="#contact-form">Contact Form</a></li>
-            </ul>
-          </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@uoa.ac.tz</p>
+                <p>Phone: +255 123 456 789</p>
+                <p>Address: Arusha, Tanzania</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#about">About Us</a>
+                <a href="#academics">Programs</a>
+                <a href="#admissions">Admissions</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
         </div>
         <div class="footer-bottom">
-          <p>© 2025 University of Arusha. All Rights Reserved.</p>
+            <p>&copy; 2024 University of Arusha. All rights reserved.</p>
         </div>
-      </div>
     </footer>
 
-    <script src="script.js"></script>
-  </body>
+    <script src="main.js"></script>
+</body>
 </html>
