@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Arusha</title>
+    <link rel="icon" type="image/png" href="images/4.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/3.png" alt="University of Arusha Logo">
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="academics.html">Academics</a>
+                <a href="admissions.html">Admissions</a>
+                <a href="research.html">Research</a>
+                <a href="student-life.html">Student Life</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="search-login">
+                <input type="search" placeholder="Search...">
+                <button class="login-btn">Login</button>
+            </div>
+        </nav>
+        
+    </header> 
+    <br>  <br>  <br> <br> <br> 
+      <div class="registration-container">
+          <h2>Create Account</h2>
+          <form id="registrationForm" class="registration-form">
+              <!-- First Row -->
+              <div class="form-row">
+                  <div class="form-group">
+                      <label for="fullName">Full Name</label>
+                      <input type="text" id="fullName" name="fullName" required>
+                      <span class="error-message" id="nameError"></span>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="regNumber">Registration Number</label>
+                      <input type="text" id="regNumber" name="regNumber" placeholder="BCS-00-0000-0000" required>
+                      <span class="error-message" id="regError"></span>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="sex">Sex</label>
+                      <select id="sex" name="sex" required>
+                          <option value="">Select Gender</option>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                          <option value="other">Other</option>
+                      </select>
+                  </div>
+              </div>
+
+              <!-- Second Row -->
+              <div class="form-row">
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email" required>
+                      <span class="error-message" id="emailError"></span>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="region">Region</label>
+                      <select id="region" name="region" required>
+                          <option value="">Select Region</option>
+                      </select>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="district">District</label>
+                      <select id="district" name="district" required>
+                          <option value="">Select District</option>
+                      </select>
+                  </div>
+              </div>
+
+              <!-- Third Row -->
+              <div class="password-row">
+                  <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" id="password" name="password" required>
+                      <span class="error-message" id="passwordError"></span>
+                  </div>
+
+                  <div class="form-group">
+                      <label for="confirmPassword">Confirm Password</label>
+                      <input type="password" id="confirmPassword" name="confirmPassword" required>
+                      <span class="error-message" id="confirmPasswordError"></span>
+                  </div>
+              </div>
+
+              <button type="submit" class="submit-btn">Register</button>
+          </form>
+      </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@uoa.ac.tz</p>
+                <p>Phone: +255 123 456 789</p>
+                <p>Address: Arusha, Tanzania</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#about">About Us</a>
+                <a href="#academics">Programs</a>
+                <a href="#admissions">Admissions</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 University of Arusha. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="script.js"></script>
+    <script src="registration.js"></script>
+
+</body>
+</html>
