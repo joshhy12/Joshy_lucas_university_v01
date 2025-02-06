@@ -6,6 +6,7 @@
     <title>University of Arusha</title>
     <link rel="icon" type="image/png" href="images/4.png">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -31,25 +32,24 @@
             <div class="user-info">
                 <span id="userName"></span>
                 <span id="userEmail"></span>
-                
+                <button id="logoutBtn" class="logout-btn">Logout</button>
             </div>
         </nav>
-        
-    </header>  <br><br><br><br><br><br>
+    </header><br><br><br><br><br><br>
 
- <h2><center>Hellow ur Welcome to the Site the side now is under Configuration</center></h2>
+    <h2><center>Hellow ur Welcome to the Site the site now is under Configuration</center></h2>
 
- <main class="welcome-section">
-    <div class="user-dashboard">
-        <h2>Welcome, <span id="userFullName"></span>!</h2>
-        <div class="user-details">
-            <p>Email: <span id="userEmailDisplay"></span></p>
-            <p>Registration Number: <span id="userRegNumber"></span></p>
+    <main class="welcome-section">
+        <div class="user-dashboard">
+            <h2>Welcome, <span id="userFullName"></span>!</h2>
+            <div class="user-details">
+                <p>Email: <span id="userEmailDisplay"></span></p>
+                <p>Registration Number: <span id="userRegNumber"></span></p>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 
-    <!-- Footer -->
+    <!-- Footer remains the same -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -77,20 +77,34 @@
             <p>&copy; 2024 University of Arusha. All rights reserved.</p>
         </div>
     </footer>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+      $(document).ready(function() {
+          // Check session and load user data
+          $.ajax({
+              url: 'api/check_session.php',
+              method: 'GET',
+              success: function(response) {
+                  if(response.status === 'success') {
+                      $('#userName').text(response.user.full_name);
+                      $('#userEmail').text(response.user.email);
+                  } else {
+                      window.location.href = 'home.html';
+                  }
+              }
+          });
 
-    <script src="main.js"></script>
-    <script src="script.js"></script>
-
-</body>
-<script>
-    $('#logoutBtn').click(function() {
-        $.ajax({
-            url: 'api/logout.php',
-            method: 'POST',
-            success: function(response) {
-                window.location.href = 'index.html';
-            }
-        });
-    });
-    </script>
+          // Logout functionality
+          $('#logoutBtn').click(function() {
+              $.ajax({
+                  url: 'api/logout.php',
+                  method: 'POST',
+                  success: function() {
+                      window.location.href = 'index.html';
+                  }
+              });
+          });
+      });
+      </script>
+  </body>
 </html>

@@ -133,14 +133,9 @@ $(document).ready(function() {
                 contentType: false,
                 success: function(response) {
                     if(response.status === 'success') {
-                        Swal.fire({
-                            title: 'Success!',
-                            text: 'Registration successful! Redirecting to login...',
-                            icon: 'success',
-                            timer: 2000
-                        }).then(() => {
-                            window.location.href = 'login.html';
-                        });
+                        alert('Registration successful!');
+                        // Force redirect to login page
+                        window.location.replace('home.html');
                     }
                 },
                 error: function(xhr, status, error) {
