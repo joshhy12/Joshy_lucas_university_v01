@@ -1,49 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>University of Arusha</title>
-    <link rel="icon" type="image/png" href="images/4.png">
-    <link rel="stylesheet" href="style.css">
-    <!-- Add jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="images/3.png" alt="University of Arusha Logo">
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="academics.html">Academics</a>
-                <a href="admissions.html">Admissions</a>
-                <a href="research.html">Research</a>
-                <a href="student-life.html">Student Life</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="search-login" style="display: flex; align-items: center; gap: 20px; padding: 10px;">
-                <input type="search" placeholder="Search..." style="padding: 8px 15px; border-radius: 20px; border: 1px solid #ddd; outline: none; width: 200px;">
-                <div class="cta-button" style="margin-left: 10px;">
-                    <a href="registration.html" class="cta-primary" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; transition: background-color 0.3s;">Apply Now</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+<?php include 'includes/header.php'; ?>
     <br><br><br><br>
 
     <main>
         <div class="registration-container">
             <h2>Create Account</h2>
-            <form id="registrationForm" class="registration-form" action="/register.php" method="POST">
+            <form id="registrationForm" class="registration-form" action="register.php" method="POST">
                 <!-- First Row -->
                 <div class="form-row">
                     <div class="form-group">
@@ -107,36 +68,11 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p>Email: info@uoa.ac.tz</p>
-                <p>Phone: +255 123 456 789</p>
-                <p>Address: Arusha, Tanzania</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <a href="about.html">About Us</a>
-                <a href="academics.html">Programs</a>
-                <a href="admissions.html">Admissions</a>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <div class="social-links">
-                    <a href="#">Facebook</a>
-                    <a href="#">Twitter</a>
-                    <a href="#">LinkedIn</a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 University of Arusha. All rights reserved.</p>
-        </div>
-    </footer>
-
     <script src="app.js"></script>
     <script src="registration.js"></script>
-</body>
-</html>
+
+    <!-- Footer -->
+    <?php include 'includes/footer.php'; ?>
+
+
+
