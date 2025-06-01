@@ -6,8 +6,6 @@
     <title>University of Arusha</title>
     <link rel="icon" type="image/png" href="images/4.png">
     <link rel="stylesheet" href="style.css">
-    <!-- Add jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -43,19 +41,34 @@
     <main>
         <div class="registration-container">
             <h2>Create Account</h2>
-            <form id="registrationForm" class="registration-form" action="/register.php" method="POST">
+            
+            <?php if (isset($_GET['error'])): ?>
+                <div class="error-message" style="background: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 20px;">
+                    <?php echo htmlspecialchars($_GET['error']); ?>
+                </div>
+            <?php endif; ?>
+            
+            <?php if (isset($_GET['success'])): ?>
+                <div class="success-message" style="background: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 20px;">
+                    <?php echo htmlspecialchars($_GET['success']); ?>
+                </div>
+            <?php endif; ?>
+            
+            <form class="registration-form" action="register.php" method="POST">
                 <!-- First Row -->
                 <div class="form-row">
                     <div class="form-group">
                         <label for="fullName">Full Name</label>
                         <input type="text" id="fullName" name="fullName" required>
-                        <span class="error-message" id="nameError"></span>
                     </div>
                     <div class="form-group">
                         <label for="regNumber">Registration Number</label>
-                        <input type="text" id="regNumber" name="regNumber" placeholder="BCS-00-0000-0000" required>
-                        <span class="error-message" id="regError"></span>
+                        <input type="text" id="regNumber" name="regNumber" placeholder="S3725.0187.2020" required>
                     </div>
+                </div>
+
+                <!-- Second Row -->
+                <div class="form-row">
                     <div class="form-group">
                         <label for="sex">Sex</label>
                         <select id="sex" name="sex" required>
@@ -65,26 +78,9 @@
                             <option value="other">Other</option>
                         </select>
                     </div>
-                </div>
-
-                <!-- Second Row -->
-                <div class="form-row">
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" required>
-                        <span class="error-message" id="emailError"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="region">Region</label>
-                        <select id="region" name="region" required>
-                            <option value="">Select Region</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="district">District</label>
-                        <select id="district" name="district" required>
-                            <option value="">Select District</option>
-                        </select>
                     </div>
                 </div>
 
@@ -92,17 +88,19 @@
                 <div class="password-row">
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required>
-                        <span class="error-message" id="passwordError"></span>
+                        <input type="password" id="password" name="password" required minlength="8">
                     </div>
                     <div class="form-group">
                         <label for="confirmPassword">Confirm Password</label>
                         <input type="password" id="confirmPassword" name="confirmPassword" required>
-                        <span class="error-message" id="confirmPasswordError"></span>
                     </div>
                 </div>
 
                 <button type="submit" class="submit-btn">Register</button>
+                
+                <div class="login-link">
+                    <p>Already have an account? <a href="login.html">Login here</a></p>
+                </div>
             </form>
         </div>
     </main>
@@ -135,8 +133,5 @@
             <p>&copy; 2024 University of Arusha. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="app.js"></script>
-    <script src="registration.js"></script>
 </body>
 </html>

@@ -1,54 +1,39 @@
-var config = {
-    cUrl: 'https://api.countrystatecity.in/v1/countries',
-    ckey: 'NHhvOEcyWk50N2Vna3VFTE00bFp3MjFKR0ZEOUhkZlg4RTk1MlJlaA=='
-}
-
-var stateSelect = document.querySelector('#region'),
-    citySelect = document.querySelector('#district')
-
-function loadRegions() {
-    const TANZANIA_CODE = 'TZ'
+// Simple JavaScript for basic functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
     
-    stateSelect.innerHTML = '<option value="">Select Region</option>'
-    citySelect.innerHTML = '<option value="">Select District</option>'
-
-    fetch(`${config.cUrl}/${TANZANIA_CODE}/states`, {
-        headers: {"X-CSCAPI-KEY": config.ckey}
-    })
-    .then(response => response.json())
-    .then(data => {
-        data.forEach(state => {
-            const option = document.createElement('option')
-            option.value = state.iso2
-            option.textContent = state.name
-            stateSelect.appendChild(option)
-        })
-    })
-    .catch(error => console.error('Error loading regions:', error))
-}
-
-function loadDistricts() {
-    const TANZANIA_CODE = 'TZ'
-    const selectedRegionCode = stateSelect.value
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    }
     
-    citySelect.innerHTML = '<option value="">Select District</option>'
-
-    fetch(`${config.cUrl}/${TANZANIA_CODE}/states/${selectedRegionCode}/cities`, {
-        headers: {"X-CSCAPI-KEY": config.ckey}
-    })
-    .then(response => response.json())
-    .then(data => {
-        data.forEach(city => {
-            const option = document.createElement('option')
-            option.value = city.iso2
-            option.textContent = city.name
-            citySelect.appendChild(option)
-        })
-    })
-}
-
-// Event listener for region selection
-stateSelect.addEventListener('change', loadDistricts)
-
-// Load regions on page load
-window.onload = loadRegions
+    // Search functionality
+    const searchInput = document.querySelector('input[type="search"]');
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value.trim();
+                if (searchTerm) {
+                    // You can implement search functionality here
+                    console.log('Searching for:', searchTerm);
+                }
+            }
+        });
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});

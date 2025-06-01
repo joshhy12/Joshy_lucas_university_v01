@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    const regNumberPattern = /^BCS-\d{2}-\d{4}-\d{4}$/;
+    // Updated pattern for new format S3725.0187.2020
+    const regNumberPattern = /^S\d{4}\.\d{4}\.\d{4}$/;
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     // Full Name validation
@@ -19,13 +20,13 @@ $(document).ready(function() {
         return true;
     });
 
-    // Registration Number validation
+    // Registration Number validation - UPDATED PATTERN
     $('#regNumber').on('input', function() {
         const $error = $(this).siblings('.error-message');
         const value = $(this).val().trim();
         
         if (!regNumberPattern.test(value)) {
-            $error.text('Invalid format. Use BCS-00-0000-0000').show();
+            $error.text('Invalid format. Use S3725.0187.2020').show();
             return false;
         }
         $error.hide();
@@ -75,7 +76,7 @@ $(document).ready(function() {
                 $error.text('Very strong password').show();
                 break;
         }
-        return strength >= 3;
+        return strength >= 2;
     });
 
     // Confirm Password validation
@@ -92,73 +93,84 @@ $(document).ready(function() {
         return true;
     });
 
-    // Load Regions
-    $.ajax({
-        url: 'api/regions.php',
-        method: 'GET',
-        success: function(regions) {
-            regions.forEach(region => {
-                $('#region').append(`<option value="${region.id}">${region.name}</option>`);
-            });
-        }
-    });
-
-    // Load Districts based on Region
-    $('#region').change(function() {
-        const regionId = $(this).val();
-        $.ajax({
-            url: `api/districts.php?region_id=${regionId}`,
-            method: 'GET',
-            success: function(districts) {
-                $('#district').empty().append('<option value="">Select District</option>');
-                districts.forEach(district => {
-                    $('#district').append(`<option value="${district.id}">${district.name}</option>`);
-                });
-            }
-        });
-    });
-
     // Form submission
     $('#registrationForm').on('submit', function(e) {
         e.preventDefault();
         
         if (validateForm()) {
-            const formData = new FormData(this);
+            const formData = {
+                fullName: $('#fullName').val(),
+                regNumber: $('#regNumber').val(),
+                sex: $('#sex').val(),
+                email: $('#email').val(),
+                password: $('#password').val()
+            };
             
             $.ajax({
                 url: 'api/register.php',
                 method: 'POST',
                 data: formData,
-                processData: false,
-                contentType: false,
+                dataType: 'json',
                 success: function(response) {
                     if(response.status === 'success') {
-                        alert('Registration successful!');
-                        // Force redirect to login page
-                        window.location.replace('home.html');
+                        alert('Registration successful! Redirecting to login...');
+                        window.location.href = 'login.html';
+                    } else {
+                        alert('Registration failed: ' + response.message);
                     }
                 },
                 error: function(xhr, status, error) {
                     console.log('Error:', error);
-                    alert('Registration failed: ' + error);
+                    console.log('Response:', xhr.responseText);
+                    alert('Registration failed. Please try again.');
                 }
             });
         }
     });
-    
 
     function validateForm() {
         let isValid = true;
         
-        // Trigger validation for all fields
-        isValid = $('#fullName').trigger('input').siblings('.error-message').is(':hidden') &&
-                 $('#regNumber').trigger('input').siblings('.error-message').is(':hidden') &&
-                 $('#email').trigger('input').siblings('.error-message').is(':hidden') &&
-                 $('#password').trigger('input').siblings('.error-message').text().includes('strong') &&
-                 $('#confirmPassword').trigger('input').siblings('.error-message').is(':hidden') &&
-                 $('#sex').val() !== '' &&
-                 $('#region').val() !== '' &&
-                 $('#district').val() !== '';
+        // Validate full name
+        const nameValid = $('#fullName').val().trim().length >= 3 && /^[a-zA-Z\s]+$/.test($('#fullName').val().trim());
+        if (!nameValid) {
+            $('#fullName').siblings('.error-message').text('Name must be at least 3 characters and contain only letters').show();
+            isValid = false;
+        }
+        
+        // Validate registration number
+        const regValid = regNumberPattern.test($('#regNumber').val().trim());
+        if (!regValid) {
+            $('#regNumber').siblings('.error-message').text('Invalid format. Use S3725.0187.2020').show();
+            isValid = false;
+        }
+        
+        // Validate email
+        const emailValid = emailPattern.test($('#email').val().trim());
+        if (!emailValid) {
+            $('#email').siblings('.error-message').text('Invalid email address').show();
+            isValid = false;
+        }
+        
+        // Validate password
+        const passwordValid = $('#password').val().length >= 8;
+        if (!passwordValid) {
+            $('#password').siblings('.error-message').text('Password must be at least 8 characters').show();
+            isValid = false;
+        }
+        
+        // Validate confirm password
+        const confirmPasswordValid = $('#confirmPassword').val() === $('#password').val();
+        if (!confirmPasswordValid) {
+            $('#confirmPassword').siblings('.error-message').text('Passwords do not match').show();
+            isValid = false;
+        }
+        
+        // Validate sex selection
+        if ($('#sex').val() === '') {
+            alert('Please select gender');
+            isValid = false;
+        }
         
         return isValid;
     }
