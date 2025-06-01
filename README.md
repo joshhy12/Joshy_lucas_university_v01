@@ -1,98 +1,41 @@
-# University of Arusha Website
+# Joshy Lucas University Registration System
 
-This project is a website for the University of Arusha, providing information about the university, its academic programs, admissions process, research, student life, and contact details. The website also includes a registration form for new students.
-
-## Table of Contents
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
+## Overview
+The Joshy Lucas University Registration System is a web application designed to facilitate student registration and management. It allows students to register for their chosen programs, log in to their accounts, and access various features related to their studies.
 
 ## Project Structure
-
-about.html
-Academics.html
-Admissions.html
-api/
-    check_session.php
-    get_user_data.php
-    home.html
-    logout.php
-    register.php
-app.js
-config/
-    database.php
-contact.html
-database.php
-database.sql
-home.html
-images/
-    1.png
-    2.png
-    3.png
-    4.png
-    image1.JPG
-    image2.JPG
-    test.webp
-    test1.jpg
-    test2.jpg
-index.html
-login.html
-logout.html
-main.js
-register.php
-registration.html
-registration.js
-research.html
-script.js
-student-life.html
-style.css
-
-
-## Installation
-1. Clone the repository to your local machine:
-
-git clone https://github.com/joshhy12/university-of-arusha.git
-
-
-2. Navigate to the project directory:
-
-cd university-of-arusha
-
-
-3. Set up a local web server (e.g., XAMPP, WAMP, MAMP) and place the project files in the server's root directory (e.g., htdocs for XAMPP).
-
-4. Import the database:
-   - Open your database management tool (e.g., phpMyAdmin)
-   - Create a new database named `university_database`
-   - Import the `database.sql` file into the newly created database
-
-5. Configure the database connection:
-   - Open the `database.php` file
-   - Update the database connection details (host, dbname, username, password) as per your local setup
-
-## Usage
-1. Start your local web server.
-
-2. Open a web browser and navigate to [http://localhost/university-of-arusha](http://localhost/university-of-arusha) (or the appropriate URL based on your server setup).
-
-3. Explore the website to learn more about the University of Arusha, its programs, and other information.
-
-4. To register as a new student, navigate to the "Apply Now" link and fill out the registration form.
+```
+Joshy_lucas_university_v01
+├── config
+│   └── database.php          # Database connection settings
+├── dashboard
+│   └── index.php            # Main dashboard for logged-in users
+├── src
+│   └── migrations
+│       └── create_tables.sql # SQL statements to create necessary tables
+├── register.php              # Handles the registration process
+├── registration.html         # Front-end form for student registration
+├── login.php                 # Manages the login process
+└── README.md                 # Project documentation
+```
 
 ## Features
-- Responsive design for various screen sizes
-- Navigation menu with links to different sections of the website
-- Registration form with validation
-- User session management (login, logout)
-- Dynamic content loading using JavaScript and AJAX
+- **Student Registration**: Users can register by providing their name, phone number, gender, email, password, and selected program.
+- **User Authentication**: Students can log in to their accounts using their credentials.
+- **Dashboard Access**: After logging in, users are redirected to a dashboard where they can manage their account and access program-related information.
 
-## Technologies Used
-- HTML
-- CSS
-- JavaScript (jQuery)
-- PHP
-- MySQL
+## Setup Instructions
+1. **Clone the Repository**: Clone this repository to your local machine.
+2. **Database Configuration**: Update the `config/database.php` file with your database connection settings.
+3. **Create Database Tables**: Run the SQL statements in `src/migrations/create_tables.sql` to set up the necessary tables in your database.
+4. **Start the Server**: Use a local server environment (like XAMPP) to run the application.
+5. **Access the Application**: Open your web browser and navigate to `http://localhost/Joshy_lucas_university_v01/registration.html` to start the registration process.
+
+## Usage Guidelines
+- Ensure all fields in the registration form are filled out correctly.
+- Passwords must be at least 8 characters long.
+- Use a valid email format for registration.
+- After successful registration, users will receive a unique registration number for their chosen program.
+
+## Contributing
+Contributions to improve the project are welcome. Please fork the repository and submit a pull request with your changes.
