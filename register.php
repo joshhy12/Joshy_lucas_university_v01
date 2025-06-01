@@ -114,240 +114,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Registration - University of Arusha</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px;
-            animation: slideUp 0.6s ease;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .header h2 {
-            color: #333;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            color: #666;
-            font-size: 1rem;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e1e5e9;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background-color: #f8f9fa;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #667eea;
-            background-color: white;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .form-group input:valid,
-        .form-group select:valid {
-            border-color: #28a745;
-        }
-
-        .form-group select {
-            cursor: pointer;
-        }
-
-        .form-group select option {
-            padding: 10px;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-        }
-
-        .submit-btn:active {
-            transform: translateY(0);
-        }
-
-        .error {
-            background-color: #f8d7da;
-            color: #721c24;
-            padding: 12px 15px;
-            border-radius: 8px;
-            margin-top: 20px;
-            border: 1px solid #f5c6cb;
-            font-weight: 500;
-        }
-
-        .success {
-            background-color: #d4edda;
-            color: #155724;
-            padding: 12px 15px;
-            border-radius: 8px;
-            margin-top: 20px;
-            border: 1px solid #c3e6cb;
-            font-weight: 500;
-        }
-
-        .login-link {
-            text-align: center;
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid #e1e5e9;
-        }
-
-        .login-link a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .login-link a:hover {
-            color: #764ba2;
-        }
-
-        .home-link {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .home-link a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: color 0.3s ease;
-        }
-
-        .home-link a:hover {
-            color: #764ba2;
-        }
-
-        .password-requirements {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: 5px;
-            line-height: 1.4;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 30px 20px;
-                margin: 10px;
-            }
-
-            .header h2 {
-                font-size: 1.8rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-        }
-
-        /* Loading animation for submit button */
-        .submit-btn.loading {
-            position: relative;
-            color: transparent;
-        }
-
-        .submit-btn.loading::after {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            top: 50%;
-            left: 50%;
-            margin-left: -10px;
-            margin-top: -10px;
-            border: 2px solid #ffffff;
-            border-radius: 50%;
-            border-top-color: transparent;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles/register.css">
 </head>
 <body>
     <div class="container">
@@ -357,71 +124,175 @@ try {
         
         <div class="header">
             <h2>🎓 Student Registration</h2>
-            <p>Join University of Arusha</p>
+            <p>Join University of Arusha - Complete Your Application</p>
         </div>
 
+        <?php if (isset($error)): ?>
+            <div class="error"><?php echo htmlspecialchars($error); ?></div>
+        <?php endif; ?>
+
         <form method="POST" id="registrationForm">
-            <div class="form-group">
-                <label for="fullName">Full Name:</label>
-                <input type="text" id="fullName" name="fullName" 
-                       value="<?php echo isset($_POST['fullName']) ? htmlspecialchars($_POST['fullName']) : ''; ?>" 
-                       required>
+
+
+
+
+            <div class="form-section">
+                <h3>📋 Personal Information</h3>
+                <div class="form-container">
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="fullName">Full Name:</label>
+                            <input type="text" id="fullName" name="fullName" 
+                                   value="<?php echo isset($_POST['fullName']) ? htmlspecialchars($_POST['fullName']) : ''; ?>" 
+                                   placeholder="Enter your full name"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number:</label>
+                            <input type="text" id="phoneNumber" name="phoneNumber" 
+                                   placeholder="+255 123 456 789"
+                                   value="<?php echo isset($_POST['phoneNumber']) ? htmlspecialchars($_POST['phoneNumber']) : ''; ?>" 
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sex">Gender:</label>
+                            <select id="sex" name="sex" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male" <?php echo (isset($_POST['sex']) && $_POST['sex'] == 'Male') ? 'selected' : ''; ?>>Male</option>
+                                <option value="Female" <?php echo (isset($_POST['sex']) && $_POST['sex'] == 'Female') ? 'selected' : ''; ?>>Female</option>
+                                <option value="Other" <?php echo (isset($_POST['sex']) && $_POST['sex'] == 'Other') ? 'selected' : ''; ?>>Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" 
+                                   placeholder="your.email@example.com"
+                                   value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>" 
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" 
+                                   placeholder="Create a strong password"
+                                   required>
+                            <div class="password-requirements">
+                                💡 Password must be at least 8 characters long
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password:</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" 
+                                   placeholder="Re-enter your password"
+                                   required>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="phoneNumber">Phone Number:</label>
-                    <input type="text" id="phoneNumber" name="phoneNumber" 
-                           placeholder="+255 123 456 789"
-                           value="<?php echo isset($_POST['phoneNumber']) ? htmlspecialchars($_POST['phoneNumber']) : ''; ?>" 
-                           required>
-                </div>
-
-                <div class="form-group">
-                    <label for="sex">Gender:</label>
-                    <select id="sex" name="sex" required>
-                        <option value="">Select Gender</option>
-                        <option value="Male" <?php echo (isset($_POST['sex']) && $_POST['sex'] == 'Male') ? 'selected' : ''; ?>>Male</option>
-                        <option value="Female" <?php echo (isset($_POST['sex']) && $_POST['sex'] == 'Female') ? 'selected' : ''; ?>>Female</option>
-                        <option value="Other" <?php echo (isset($_POST['sex']) && $_POST['sex'] == 'Other') ? 'selected' : ''; ?>>Other</option>
+            <div class="form-section">
+                <h3>🎓 Academic Information</h3>
+                <div class="form-group full-width">
+                    <label for="program">Select Program:</label>
+                    <select id="program" name="program" required>
+                        <option value="">Choose your desired program</option>
+                        <?php foreach ($programs as $program): ?>
+                            <option value="<?php echo htmlspecialchars($program['program_name']); ?>"
+                                    <?php echo (isset($_POST['program']) && $_POST['program'] == $program['program_name']) ? 'selected' : ''; ?>>
+                                <?php echo htmlspecialchars($program['program_name']); ?>
+                            </option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" 
-                       placeholder="your.email@example.com"
-                       value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>" 
-                       required>
+            <div class="submit-section">
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    🚀 Register Now
+                </button>
             </div>
+        </form>
 
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <div class="password-requirements">
-                    Password must be at least 8 characters long
-                </div>
-            </div>
+        <div class="login-link">
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+        </div>
+    </div>
 
-            <div class="form-group">
-                <label for="confirmPassword">Confirm Password:</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required>
-            </div>
+    <script>
+        // Form validation and enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('registrationForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
 
-            <div class="form-group">
-                <label for="program">Select Program:</label>
-                <select id="program" name="program" required>
-                    <option value="">Select Program</option>
-                    <?php foreach ($programs as $program): ?>
-                        <option value="<?php echo htmlspecialchars($program['program_name']); ?>"
-                                <?php echo (isset($_POST['program']) && $_POST['program'] == $program['program_name']) ? 'selected' : ''; ?>>
-                            <?php echo htmlspecialchars($program['program_name']); ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
+            // Real-time password validation
+            function validatePasswords() {
+                if (password.value && confirmPassword.value) {
+                    if (password.value === confirmPassword.value) {
+                        confirmPassword.classList.remove('error');
+                        confirmPassword.classList.add('success');
+                    } else {
+                        confirmPassword.classList.remove('success');
+                        confirmPassword.classList.add('error');
+                    }
+                }
+            }
 
-            <button type="submit" class="submit-btn" id="submitBtn">
-                Register Now
-            </button>
+            password.addEventListener('input', validatePasswords);
+            confirmPassword.addEventListener('input', validatePasswords);
+
+            // Form submission with loading state
+            form.addEventListener('submit', function(e) {
+                submitBtn.classList.add('loading');
+                submitBtn.disabled = true;
+                
+                // Re-enable button after 3 seconds in case of error
+                setTimeout(() => {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                }, 3000);
+            });
+
+            // Enhanced input validation
+            const inputs = document.querySelectorAll('input, select');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    if (this.checkValidity()) {
+                        this.classList.remove('error');
+                        this.classList.add('success');
+                    } else {
+                        this.classList.remove('success');
+                        this.classList.add('error');
+                    }
+                });
+
+                input.addEventListener('input', function() {
+                    if (this.classList.contains('error') && this.checkValidity()) {
+                        this.classList.remove('error');
+                        this.classList.add('success');
+                    }
+                });
+            });
+
+            // Phone number formatting
+            const phoneInput = document.getElementById('phoneNumber');
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.startsWith('255')) {
+                    value = '+' + value;
+                } else if (value.startsWith('0')) {
+                    value = '+255' + value.substring(1);
+                }
+                e.target.value = value;
+            });
+        });
+    </script>
+</body>
+</html>
