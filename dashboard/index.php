@@ -23,7 +23,7 @@ $studentData = $stmt->fetch();
 
 if (!$studentData) {
     header("Location: ../login.html");
-    exit;
+    exit; 
 }
 
 $isNewUser = isset($_GET['welcome']);
@@ -116,7 +116,8 @@ $isNewUser = isset($_GET['welcome']);
                             <p><strong>Email:</strong> <?php echo htmlspecialchars($studentData['email']); ?></p>
                             <p><strong>Phone Number:</strong> <?php echo htmlspecialchars($studentData['phone_number']); ?></p>
                             <p><strong>Gender:</strong> <?php echo htmlspecialchars($studentData['gender']); ?></p>
-                            <p><strong>Registration Status:</strong> <?php echo ucfirst($studentData['registration_status']); ?></p>
+                            <p><strong>Registration Status:</strong><?php echo $studentData['enrollment_status'] ? ucfirst($studentData['enrollment_status']) : 'Not Enrolled'; ?>
+</p>
                         </div>
                     </div>
                 </div>

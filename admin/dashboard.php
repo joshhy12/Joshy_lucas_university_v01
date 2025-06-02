@@ -342,35 +342,35 @@ try {
                 <div class="icon">👥</div>
                 <h3>Student Management</h3>
                 <p>View and manage student records, update information, and track student progress.</p>
-                <a href="manage_students.php">Manage Students</a>
+                <a href="students/view_students.php">Manage Students</a>
             </div>
 
             <div class="menu-card">
                 <div class="icon">📚</div>
                 <h3>Program Management</h3>
                 <p>Add, edit, or remove academic programs. Set program fees and requirements.</p>
-                <a href="manage_programs.php">Manage Programs</a>
+                <a href="programs/view_programs.php">Manage Programs</a>
             </div>
 
             <div class="menu-card">
                 <div class="icon">📊</div>
                 <h3>Reports & Analytics</h3>
                 <p>Generate reports on enrollments, student statistics, and program performance.</p>
-                <a href="reports.php">View Reports</a>
+                <a href="#">View Reports</a>
             </div>
 
             <div class="menu-card">
                 <div class="icon">⚙️</div>
                 <h3>System Settings</h3>
                 <p>Configure system settings, manage admin users, and update university information.</p>
-                <a href="settings.php">System Settings</a>
+                <a href="#">System Settings</a>
             </div>
 
             <div class="menu-card">
                 <div class="icon">📧</div>
                 <h3>Communications</h3>
                 <p>Send notifications to students, manage email templates, and communication logs.</p>
-                <a href="communications.php">Communications</a>
+                <a href="#">Communications</a>
             </div>
         </div>
 

@@ -9,14 +9,17 @@ require_once '../config/database.php';
 // Function to generate registration number
 function generateRegistrationNumber($programCode, $studentId, $pdo) {
     $year = '2025';
+    $staticCode = '01'; // Static number that never changes
+    
     $stmt = $pdo->prepare("SELECT COUNT(*) as count FROM enrollments e JOIN programs p ON e.program_id = p.id WHERE p.program_code = ? AND e.academic_year LIKE ? AND e.enrollment_status = 'approved'");
     $stmt->execute([$programCode, $year . '%']);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     $count = $result['count'];
     $sequentialNumber = str_pad($count + 1, 4, '0', STR_PAD_LEFT);
-    $studentIdPadded = str_pad($studentId, 2, '0', STR_PAD_LEFT);
-    return $programCode . '-' . $studentIdPadded . '-' . $sequentialNumber . '-' . $year;
+    
+    return $programCode . '-' . $staticCode . '-' . $sequentialNumber . '-' . $year;
 }
+
 
 // Handle POST requests for approve/reject
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -130,7 +133,6 @@ if (isset($_GET['msg'])) {
 <body>
     <div class="container">
         <div class="navigation">
-            <a href="../home.php" class="nav-btn">🏠 Home</a>
             <a href="dashboard.php" class="nav-btn">📊 Dashboard</a>
         </div>
 
