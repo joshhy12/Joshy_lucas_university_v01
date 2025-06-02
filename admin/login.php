@@ -156,6 +156,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <div class="login-container">
+          <div class="home-link">
+            <a href="../home.php">← Back to Home</a>
+        </div>
         <div class="admin-icon">🔐</div>
         <h2>Admin Access</h2>
         <p style="color: #666; margin-bottom: 30px;">University of Arusha Administration</p>
